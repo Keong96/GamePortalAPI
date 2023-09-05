@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const config = {
   connectionString:
-    "postgres://weddingappdb_user:EZNc8dlGCJ8ACJIkc7KlQfnwW4YR7rf9@dpg-cg3jcmd269v3bpaqiphg-a.singapore-postgres.render.com/weddingappdb?ssl=true",
+    "postgres://gameportal_db_user:TnJdfCS9gNV1j1P19fsGp2H14t6qkf1N@dpg-cjrcte61208c73bkhro0-a.singapore-postgres.render.com/gameportal_db?ssl=true",
 };
 
 const { Client } = require('pg');
