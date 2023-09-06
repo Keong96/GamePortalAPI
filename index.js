@@ -104,7 +104,7 @@ app.post('/user/create', async (req, res) => {
     return res.status(500).send("Error: Please fill in your username and password to complete the registration process.");
   }
 
-  client.query("SELECT * FROM users WHERE email = '"+req.body.username+"'")
+  client.query("SELECT * FROM users WHERE username = '"+req.body.username+"'")
         .then((result) => {
             if(result.rows.length > 0)
             {
