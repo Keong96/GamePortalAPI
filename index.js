@@ -113,7 +113,7 @@ app.post('/user/create', async (req, res) => {
             }
             else
             {
-              client.query("INSERT INTO users (username, password) VALUES ('"+req.body.username+"', crypt('"+req.body.password+"', gen_salt('bf'))")
+              client.query("INSERT INTO users (username, password) VALUES ('"+req.body.username+"', crypt('"+req.body.password+"', gen_salt('bf')))")
                     .then((result) => {
                       res.status(201).send("Register Success");
                     })
