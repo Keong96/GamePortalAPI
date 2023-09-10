@@ -131,7 +131,7 @@ app.post('/user/create', async (req, res) => {
 
 app.get('/user/get/:id', verifyToken, async (req, res) => {
 
-    client.query("SELECT * FROM users WHERE id = "+req.params.id)
+    client.query("SELECT username, credit FROM users WHERE id = "+req.params.id)
           .then((result) => {
                 if(result.rowCount <= 0)
                     res.status(500).send("User doesnt exist");
