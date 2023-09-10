@@ -35,25 +35,20 @@ function GenerateJWT(_userId, _username, _user_type)
 }
 
 function verifyToken(req, res, next) {
-  const authHeader = req.headers.authorization;
 
-  if (authHeader) {
+    const authHeader = req.headers.authorization;
     const token = authHeader.split(" ")[1];
+
     jwt.verify(token, process.env.TOKEN_KEY, (err, user) =>
     {
-      if (err)
-      {
-        return res.sendStatus(403);
-      }
+        if (err)
+        {
+            return res.sendStatus(403);
+        }
 
-      req.user = user;
-      next();
+        req.user = user;
+        next();
     });
-  }
-  else
-  {
-    res.sendStatus(401);
-  }
 }
 
 
