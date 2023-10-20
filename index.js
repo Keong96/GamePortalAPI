@@ -143,3 +143,15 @@ app.get('/user/get/:id', verifyToken, async (req, res) => {
                 res.status(500).send(e.stack);
           })
   })
+
+app.get('/colordice/get/', verifyToken, async (req, res) => {
+
+    client.query("SELECT * FROM colordice_matches")
+          .then((result) => {
+            res.send(JSON.stringify(result.rows))
+          })
+          .catch((e) => {
+                console.error(e.stack);
+                res.status(500).send(e.stack);
+          })
+  })
